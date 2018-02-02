@@ -1,0 +1,131 @@
+<html>
+<head>
+    <script src="libs/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
+    <script src="https://dist.3d.io/3dio-js/1.1.x/3dio.min.js"></script>
+    
+</head>
+<body>
+
+<a-scene id="scene">
+    <a-assets>
+        <audio id="blip1" src="assets/horned_owl.wav"></audio>
+    </a-assets>
+    <a-sky color="#ECECEC"></a-sky>
+    <a-entity position="54 1.5 12">
+        <a-camera universal-controls>
+            <a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
+                              radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
+        </a-camera>
+    </a-entity>
+
+<div id="webgl"></div>
+<!-- Default light -->
+ <!-- <a-light type="directional" intensity="0.9" position="-1 -2  2"></a-light>
+ <a-light type="directional" intensity="1.0" position=" 2  1 -1"></a-light> -->
+
+<a-assets>
+   <a-asset-item id="sofa" src="assets/armchair/armchiar.dae"></a-asset-item>
+   
+  </a-assets>
+
+    <a-box color="tomato" position="45 0 6" depth="2" height="2" width="2" class="intersectable">
+       <a-animation begin="click" attribute="position" from="45 0 6" to= "45 0 -10" dur="3000"></a-animation>
+    </a-box>
+    <a-box material="color:tomato;transparent:true;opacity:0" depth="2" height="2" width="2" sound="src: url(assets/horned_owl.wav); on: click" class="intersectable" position="55 1.5 6"></a-box>
+    
+    <a-obj-model src="assets/AngryBirdsRedsMask.obj" visible= false mtl="assets/AngryBirdsRedsMask.mtl" position="55 1.5 6"></a-obj-model>
+    <a-entity collada-model="url(assets/stormtrooper.dae)"  visible= false rotation="90 0 0" position="60 0 6" ></a-entity>
+
+  <!-- Black couch-->
+  <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:b476ece5-3bbf-474f-9646-efd5f0e022a6" scale="3 3 3" position="55 0 5" rotation="0 90 0"></a-entity>
+  <!-- grey center table-->
+  <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:ca60e906-1463-4d58-b070-111ed309fe8a" scale="3 3 3" position="60 0 5"></a-entity>
+  <!-- travel magazine -->
+  <a-entity io3d-furniture="id:32a5db5a-9451-4ead-8c9e-b758e8c72266" scale="2 2 2" position="59 1 5" rotation="0 90 0" visible=""></a-entity>
+  <!-- Grey carpet-->
+  <a-entity io3d-furniture="id:3490b35b-8cab-4fd0-8191-8118a43cfca5" scale="5 5 5" position="60 0 5"></a-entity>  
+  <!-- Side table-->  
+  <a-entity io3d-furniture="id:ba9653f9-f35a-45ab-9e70-003f53f04f34" scale="3 3 3" position="54.5 0 11" rotation="0 180 0" visible=""></a-entity>
+  <!-- Orchid -->
+  <a-entity io3d-furniture="id:9a17f541-886e-467e-b740-cf665d74af11" scale="2 2 2" position="53.5 1.5 11" rotation="" visible=""></a-entity>
+  <!--Book pile -->
+  <a-entity io3d-furniture="id:456df8a4-b36c-4974-9c6f-a80562c27a70" scale="2 2 2" position="55 1.4 11" rotation="" visible=""></a-entity>
+  <!-- Side table-->  
+  <a-entity io3d-furniture="id:ba9653f9-f35a-45ab-9e70-003f53f04f34" scale="3 3 3" position="56 0 -1" rotation="0 180 0" visible=""></a-entity>
+  <!-- Orchid -->
+  <a-entity io3d-furniture="id:9a17f541-886e-467e-b740-cf665d74af11" scale="2 2 2" position="55.5 1.5 -1" rotation="" visible=""></a-entity>
+
+  <!-- Wall Light -->
+  <!--  <a-sphere position="55 3 11" radius="0.04" color="#EF2D5E"></a-sphere>
+   
+    <a-light id="wallLight" name="wallLight" type="ambient" color="#222" position="55 3 11" intensity="1"></a-light> -->
+    <a-sphere position="64 8 -1" radius="0.09" color="#EF2D5E" rotation="" scale="" visible="" material="" geometry=""></a-sphere>
+    <a-light id="wallLight"  type="point" color="#222" position="64 8 -1" intensity="3" rotation="" scale="" visible="" light="">
+             <a-animation attribute="intensity" to="3"></a-animation>
+    </a-light>
+    
+    <a-sphere position="64 8 18" radius="0.09" color="#EF2D5E" rotation="" scale="" visible="" material="" geometry=""></a-sphere>
+    <a-light id="wallLight" type="point" color="#222" position="64 8 18" intensity="3" rotation="" scale="" visible="" light="">
+             <a-animation attribute="intensity" to="3"></a-animation>
+    </a-light>
+
+  <!-- Grand piano -->
+  <a-entity io3d-furniture="id:9ce8547d-59ec-4205-91d8-e578f19d9e63" scale="3 3 3" position="20 0 -1" rotation="0 90 0" visible=""></a-entity>
+
+   <!-- glass -->
+ 
+
+<!-- plant -->
+<a-entity io3d-furniture="id:9ce8547d-59ec-4205-91d8-e578f19d9e63" scale="3 3 3" position="-20 0 -1" rotation="0 90 0" visible=""></a-entity>
+
+<!-- big cabinet -->
+ <a-obj-model scale="0.05 0.05 0.04" src="assets/table/dining_room.obj" mtl="assets/table/dining_room.mtl" rotation="0 -90 0" visible="true" position="78 0 5" material="" obj-model=""></a-obj-model>
+
+ <a-obj-model scale="0.06 0.06 0.06" src="assets/tv/wall-flat-tv.obj" mtl="assets/tv/wall-flat-tv.mtl" rotation="0 -90 0" visible="true" position="75 6 5" material="" obj-model=""></a-obj-model>
+ <a-entity collada-model="#sofa" scale="2 2 2" visible= false rotation="0 0 0" position="60 0 100" ></a-entity> 
+    <!-- Ceiling -->
+    <a-entity static-body="" geometry="primitive: box; depth: 50; height: 0.1; width: 80" position="40 14 5" material="shader: flat; side: double; opacity: 1;
+src: url(images/cel1.jpg); repeat: 20 12" rotation="" scale="" visible=""></a-entity>
+<!-- staircase -->
+
+<!-- <a-obj-model scale="0.05 0.05 0.04" src="assets/staircase/staircase_360_circle.obj" mtl="assets/staircase/staircase_360_circle.mtl" rotation="0 -90 0" visible="true" position="50 0 5" material="" obj-model=""></a-obj-model> -->
+
+    <!-- Floor -->
+  <a-entity static-body="" geometry="primitive: box; depth: 40; height: 0.1; width: 80" position="40 -0.5 5" material="shader: flat; side: double; opacity: 1;
+src: url(images/woodenfloor.jpg); repeat: 12 5" shadow="cast:true;receive:true;" rotation="" scale="" visible=""></a-entity>
+    
+<!--Back wall -->
+<a-entity geometry="primitive: box; depth: 0.6; height: 1; width: 40" position="0 13.5 5" rotation="0 90 0" material="shader: standard;
+roughness: 1; src: url(images/beam1.jpg); repeat: 9 1" scale="" visible=""></a-entity>
+   <a-entity static-body="" geometry="primitive: box; depth: 1; height: 14; width: 40" position="-0.5 6.5 5" rotation="0 90 0" material="shader: standard;
+roughness: 1; src: url(images/wall2.jpg); repeat: 4 2" scale="" visible=""></a-entity>
+<!--Front wall- -->
+ <a-entity geometry="primitive: box; depth: 0.6; height: 1; width: 40" position="79.7 13.5 5" rotation="0 90 0" material="shader: standard;
+roughness: 1; src: url(images/beam1.jpg); repeat: 9 1"></a-entity>
+    <a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 40" position="80 6.5 5" rotation="0 90 0" material="shader: standard;
+roughness: 1; src: url(images/wall2.jpg); repeat: 4 2"></a-entity>
+
+<!-- Midwall -->
+
+ <a-entity static-body="" geometry="primitive: box; depth: 2; height: 5; width: 20" position="49 0 15.2" rotation="0 90 0" material="shader: standard;roughness: 1; src: url(images/wall2.jpg); repeat: 4 2" scale="" visible=""></a-entity>
+
+
+<a-entity geometry="primitive: box; depth: 0.6; height: 1; width: 80" position="40 13.5 -14.5" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: url(images/beam1.jpg); repeat: 32 1" scale="" visible=""></a-entity>
+ <a-entity static-body="" geometry="primitive: box; depth: 1; height: 14; width: 80" position="40 6.5 -15.5" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-entity>
+
+<!--Left wall -->
+<a-entity geometry="primitive: box; depth: 0.6; height: 1; width: 80" position="40 13.5 25" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: url(images/beam1.jpg); repeat: 32 1" scale="" visible=""></a-entity>
+<a-entity static-body="" geometry="primitive: box; depth: 1; height: 14; width: 80" position="40 6.5 25.5" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-entity>
+
+
+        </a-entity>
+    </a-entity>
+</a-scene>
+<script src="main.js"></script>
+</body>
+</html>
