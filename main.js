@@ -57,11 +57,25 @@ document.querySelector('#cubefireplace').addEventListener('click', function () {
   		var animation = document.createElement("a-animation");
   		animation.setAttribute("attribute","position");
         animation.setAttribute("to","55 2 -14");
-            animation.setAttribute("dur","450");
-            animation.setAttribute("repeat","indefinite");
+        animation.setAttribute("dur","450");
+        animation.setAttribute("repeat","indefinite");
         //    firelight(animation);
   		fire.setAttribute('visible', 'true');
   		firelight.setAttribute('visible', 'true');
   		firelight.setAttribute('intensity', '0.1');
+  		firelight.setAttribute("positionto","55 2 -14");
+        firelight.setAttribute("duration","450");
+        firelight.setAttribute("repeat","indefinite");
   	}
+});
+
+//turn on off music of radio
+document.querySelector('#cuberadio').addEventListener('click', function () {
+	var entity = document.querySelector('[sound]');
+	
+	if(entity.components.sound.isPlaying == true) {
+		entity.components.sound.pauseSound();
+	} else {
+		entity.components.sound.playSound();
+	}
 });
