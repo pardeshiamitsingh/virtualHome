@@ -9,14 +9,14 @@ document.querySelector('#cubeshelf').addEventListener('click', function () {
 	var mobileshelf = document.querySelector('#mobileshelf');
 	var cubeshelf = document.querySelector('#cubeshelf');
 
-  	if(mobileshelf.getAttribute('position').x == 45  && 
+  	if(mobileshelf.getAttribute('position').x == 25  && 
   		mobileshelf.getAttribute('position').y == 0 && 
-  		mobileshelf.getAttribute('position').z == 24  ) {
-  		mobileshelf.setAttribute('position', '45 0 20');
-  		cubeshelf.setAttribute('position', '45 0 20');
+  		mobileshelf.getAttribute('position').z == 15  ) {
+  		mobileshelf.setAttribute('position', '25 0 11');
+  		cubeshelf.setAttribute('position', '25 0 11');
   	} else {
-  		mobileshelf.setAttribute('position', '45 0 24');
-  		cubeshelf.setAttribute('position', '45 0 24');
+  		mobileshelf.setAttribute('position', '25 0 15');
+  		cubeshelf.setAttribute('position', '25 0 15');
   	}
 });
 
@@ -40,6 +40,18 @@ document.querySelector('#cuberlight').addEventListener('click', function () {
   		rlight.setAttribute('intensity', '4');
   	} else {
   		rlight.setAttribute('intensity', '0');
+  		
+  	}
+});
+
+//framery light turn on off
+document.querySelector('#cubeframerylight').addEventListener('click', function () {
+	var framerylight = document.querySelector('#framerylight');
+
+  	if(framerylight.getAttribute('intensity') == 0 ) {
+  		framerylight.setAttribute('intensity', '4');
+  	} else {
+  		framerylight.setAttribute('intensity', '0');
   		
   	}
 });
@@ -68,7 +80,7 @@ document.querySelector('#cubefireplace').addEventListener('click', function () {
         firelight.setAttribute("repeat","indefinite");
   	}
 });
-
+	
 //turn on off music of radio
 document.querySelector('#cuberadio').addEventListener('click', function () {
 	var entity = document.querySelector('[sound]');
