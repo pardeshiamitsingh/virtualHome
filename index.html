@@ -12,10 +12,9 @@
 <a-scene id="scene" shadows="true">
     <a-assets>
         <audio id="audio1" src="assets/Despacito.mp3"></audio>
-        <video id="video_1" src="https://ucarecdn.com/bcece0a8-86ce-460e-856b-40dac4875f15/"></video>
         <video id="piper" autoplay loop="true" src="assets/piper.mp4"></video>
     </a-assets>
-    <a-sky color="#ECECEC"></a-sky>
+    <a-sky src="images/sky.jpg"></a-sky>
     <a-entity position="70 1 14.5" rotation="0 90 0">
         <a-camera universal-controls>
             <a-entity cursor="fuse: true; maxDistance: 20; timeout: 250" position="0 0 -5" geometry="primitive: ring" material="color: white; shader: flat" rotation="" scale="0.1 0.1 0.1" visible="" raycaster="">
@@ -36,27 +35,38 @@ src: url(images/potr13.jpg)" scale="" visible=""></a-entity>
 roughness: 1; src: url(images/beam1.jpg); repeat: 1 2" scale="" visible=""></a-entity>
 
   <!-- Black couch-->
+  <!-- https://furniture.3d.io/ -->
  <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:b476ece5-3bbf-474f-9646-efd5f0e022a6" scale="3 3 3" position="55 0 14.5" rotation="0 90 0" visible=""></a-entity>  
  <!-- grey center table-->
+ <!-- https://furniture.3d.io/ -->
   <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:ca60e906-1463-4d58-b070-111ed309fe8a" scale="3 3 3" position="60 0 14.5" rotation="" visible=""></a-entity>
+
   <!-- travel magazine -->
+  <!-- https://furniture.3d.io/ -->
   <a-entity io3d-furniture="id:32a5db5a-9451-4ead-8c9e-b758e8c72266" scale="2 2 2" position="59 1 14.5" rotation="0 90 0" visible="">
   </a-entity>
 
   <!-- Grey carpet-->
+  <!-- https://furniture.3d.io/ -->
   <a-entity io3d-furniture="id:3490b35b-8cab-4fd0-8191-8118a43cfca5" scale="5 5 5" position="60 0 14.5" rotation="" visible=""></a-entity>
-  <!-- Side table-->  
+  <!-- Side table--> 
+  <!-- https://furniture.3d.io/ --> 
   <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:ba9653f9-f35a-45ab-9e70-003f53f04f34" scale="3 3 3" position="54.5 0 20" rotation="0 180 0" visible=""></a-entity>
   <!-- Orchid -->
+  <!-- https://furniture.3d.io/ -->
   <a-entity io3d-furniture="id:9a17f541-886e-467e-b740-cf665d74af11" scale="2 2 2" position="53.5 1.5 20" rotation="" visible=""></a-entity>
   <!--Book pile -->
+  <!-- https://furniture.3d.io/ -->
   <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:456df8a4-b36c-4974-9c6f-a80562c27a70" scale="2 2 2" position="55 1.5 20" rotation="" visible=""></a-entity>
-  <!-- Side table-->  
+  <!-- Side table-->
+  <!-- https://furniture.3d.io/ -->  
   <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:ba9653f9-f35a-45ab-9e70-003f53f04f34" scale="3 3 3" position="54.5 0 9" rotation="0 180 0" visible=""></a-entity>
   <!-- Orchid -->
+  <!-- https://furniture.3d.io/ -->
   <a-entity io3d-furniture="id:9a17f541-886e-467e-b740-cf665d74af11" scale="2 2 2" position="53.5 1.5 9" rotation="" visible=""></a-entity>
 
   <!-- Ceiling Light -->
+  <!-- https://free3d.com/ -->
   <a-obj-model src="assets/bulb/lightbulbfinal.obj" visible="true" mtl="assets/bulb/lightbulbfinal.mtl" position="64 11 -7" rotation="" scale="0.01 0.01 0.01" material="" obj-model=""></a-obj-model>
   <a-light id="wallLight" type="point" color="#222" position="64 8 -7" intensity="2" rotation="" scale="" visible="" light="">
     </a-light>
@@ -65,12 +75,16 @@ roughness: 1; src: url(images/beam1.jpg); repeat: 1 2" scale="" visible=""></a-e
     </a-light>
 
   <!-- Grand piano -->
+  <!-- https://furniture.3d.io/ -->
   <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:9ce8547d-59ec-4205-91d8-e578f19d9e63" scale="3 3 3" position="25 0 20" rotation="0 90 0" visible=""></a-entity>
  
 <!--mobile shelf-->
+<!-- https://furniture.3d.io/ -->
 <a-entity id="cubeshelf" geometry="primitive: box" material="color: blue" position="23 0 15" rotation="" scale="2 7 2" visible="false" width="10"></a-entity>
 <a-entity shadow="cast:true;receive:true;" id="mobileshelf" geometry="primitive: box" io3d-furniture="id:82c9add5-781b-4446-b6d9-5999d1d03594" position="25 0 15" rotation="0 90 0" scale="4 4 4" visible=""></a-entity>
 
+<!-- Lamps -->
+<!-- https://furniture.3d.io/ -->
 <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:7fb81a8c-4019-450c-b178-aba4c9d14b71" position="78 0 -8" rotation="0 -90 0" scale="5 5 5" visible=""></a-entity>
  <a-light id="llight" type="point" color="#222" position="78 2 -8" intensity="0" rotation="" scale="" visible="" light="">
 </a-light>
@@ -82,12 +96,10 @@ roughness: 1; src: url(images/beam1.jpg); repeat: 1 2" scale="" visible=""></a-e
 <a-entity id="cuberlight" geometry="primitive: box" material="color: blue" position="78 2 19" rotation="" scale="2 7 2" width="10" visible="false"></a-entity>
 
     <!-- Ceiling -->
-    <a-entity static-body="" geometry="primitive: box; depth: 50; height: 0.1; width: 80" position="40 14 5" material="shader: flat; side: double; opacity: 1;
-src: url(images/cel1.jpg); repeat: 20 12" rotation="" scale="" visible=""></a-entity>
+   <a-entity static-body="" geometry="primitive: box; depth: 45; height: 0.09; width: 79" position="40 14 5" material="shader: flat; side: double; opacity: 1; src: url(images/cel1.jpg); repeat: 20 12" rotation="" scale="" visible=""></a-entity>
 
     <!-- Floor -->
-  <a-entity shadow="cast:true;receive:true;"  static-body="" geometry="primitive: box; depth: 40; height: 0.1; width: 80" position="40 -0.5 5" material="shader: flat; side: double; opacity: 1;
-src: url(images/woodenfloor.jpg); repeat: 12 5" shadow="cast:true;receive:true;" rotation="" scale="" visible=""></a-entity>
+  <a-entity shadow="cast:true;receive:true;"  static-body="" geometry="primitive: box; depth: 40; height: 0.1; width: 80" position="40 -0.5 5" material="shader: flat; side: double; opacity: 1; src: url(images/woodenfloor.jpg); repeat: 12 5" shadow="cast:true;receive:true;" rotation="" scale="" visible=""></a-entity>
     
 <!--Back wall -->
 <a-entity shadow="cast:true;receive:true;" geometry="primitive: box; depth: 0.6; height: 1; width: 40" position="0 13.5 5" rotation="0 90 0" material="shader: standard;
@@ -101,9 +113,11 @@ roughness: 1; src: url(images/beam1.jpg); repeat: 9 1"></a-entity>
 roughness: 1; src: url(images/wall2.jpg); repeat: 4 2"></a-entity>
 
 <!--Door -->
+<!-- https://free3d.com/ -->
 <a-obj-model src="assets/Door/Door.obj" visible="true" mtl="assets/Door/Door.mtl" position="74 -1 -15" rotation="0 -180 0" scale="1 1 1" material="" obj-model=""></a-obj-model>
 
 <!-- Cabinet -->
+<!-- https://furniture.3d.io/ -->
 <a-entity shadow="cast:true;receive:true;"  io3d-furniture="id:a0f898a3-74f0-4cbd-9423-057a64b2d00e" position="77.5 0 6" scale="3 3 3" rotation="0 -90 0" visible=""></a-entity>
 
 <!-- Video -->
@@ -113,6 +127,7 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 4 2"></a-entity>
  <a-entity shadow="cast:true;receive:true;" static-body="" geometry="primitive: box; depth: 2; height: 5; width: 20" position="49 0 15.2" rotation="0 90 0" material="shader: standard;roughness: 1; src: url(images/wall2.jpg); repeat: 4 2" scale="" visible=""></a-entity>
 
 <!-- high chair -->
+<!-- https://furniture.3d.io/ -->
 <a-entity io3d-furniture="id:8277e021-dcd2-4bbe-8924-72f9f1690d19" scale="2 2 2" position="33 0 22" rotation="0 -180 0" visible=""></a-entity>
 
 <a-entity geometry="primitive: box; depth: 0.6; height: 1; width: 80" position="40 13.5 -14.5" rotation="0 0 0" material="shader: standard;
@@ -121,6 +136,7 @@ roughness: 1; src: url(images/beam1.jpg); repeat: 32 1" scale="" visible=""></a-
 roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-entity>
 
 <!-- French carafe -->
+<!-- https://furniture.3d.io/ -->
  <a-entity io3d-furniture="id:e974c59d-3458-4bbf-b45a-ff5ad6f187ba" scale="2 2 2" position="49 2.5 19"></a-entity>
 
  <!-- Globe -->
@@ -130,9 +146,11 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-
  <a-cylinder color="crimson" src="images/rod.jpg" height="0.2" radius="0.07" position="49 2.6 11" rotation="0 0 0" scale="" visible="" material="" geometry=""></a-cylinder>
 
 <!-- Jug -->
+<!-- https://furniture.3d.io/ -->
  <a-entity io3d-furniture="id:ab6476f3-6b52-42f0-ae06-203b1ef87d84" scale="2 2 2" position="49 2.5 13" rotation="0 90 0" visible=""></a-entity>
 
 <!-- Radio -->
+<!-- https://free3d.com/ -->
  <a-entity collada-model="url(assets/radio/Radio_BI_dae.dae)" rotation="0 90 0" position="49 2.5 15" visible="" scale="0.1 0.1 0.1"></a-entity>
 <a-entity id="cuberadio" sound="src: #audio1" geometry="primitive: box" material="color: blue" position="49 2.5 15" rotation="" scale="0.5 1 0.5" visible="false" width="10"></a-entity>
 
@@ -140,15 +158,19 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-
 <a-entity static-body="" geometry="primitive: box; depth: 2; height: 30; width: 15" position="20 0 17.5" rotation="0 90 0" material="shader: standard;roughness: 1; src: url(images/wall2.jpg); repeat: 4 2" scale="" visible=""></a-entity>
 
 <!--Bed-->
+<!-- https://free3d.com/ -->
 <a-obj-model src="assets/bed/cama.obj" visible="true" mtl="assets/bed/cama.mtl" position="13 0 17.5" rotation="" scale="0.5 0.5 0.5" material="" obj-model=""></a-obj-model>
 
 <!--Bedside table-->
+<!-- https://free3d.com/ -->
 <a-obj-model src="assets/bedtable/Bedside Table B.obj" visible="true" mtl="assets/bedtable/Bedside_Table_B.mtl" position="18 0 13" rotation="0 -90 0" scale="0.04 0.04 0.04" material="" obj-model=""></a-obj-model>
 
 <!-- wardrobe-->
+<!-- https://furniture.3d.io/ -->
 <a-entity io3d-furniture="id:787942f9-8886-4f47-96cb-9828836e3680" position="3 0 12" scale="3.5 3.5 3.5" rotation="0 90 0" visible=""></a-entity>
 
 <!--Framery-->
+<!-- https://furniture.3d.io/ -->
 <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:2e33ffb3-e046-44df-bbf8-26c1aa00287e" scale="4.5 4.5 4.5" rotation="0 90 0" position="3 0 -9" visible=""></a-entity>
 <a-light id="framerylight" type="point" color="#333" position="3 5 -9" intensity="0" rotation="0 45 0" scale="" visible="" light="">
 </a-light>
@@ -161,6 +183,7 @@ roughness: 1; src: url(images/beam1.jpg); repeat: 32 1" scale="" visible=""></a-
 roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-entity>
 
 <!--Fireplace -->
+<!-- https://furniture.3d.io/ -->
 <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:f103bb18-96ba-4734-8905-87cd43bfb3ce" position="55 0 -15" rotation="" scale="5 5 5" visible=""></a-entity>
 <a-entity id="cubefireplace" geometry="primitive: box" material="color: blue" position="55 0 -15" rotation="" scale="2 7 2" visible="false" width="10"></a-entity>
 <a-entity id="fire" geometry="primitive: plane; height: 1; width: 1" position="55 2 -14" rotation="0 0 0" material="shader: flat; side: double; transparent: true; src: url(images/fire.png)" scale="" visible="false">
@@ -173,10 +196,11 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-
  <a-sphere shadow="cast:true;receive:true;" id="football" src="images/football.jpg" position="60 0.2 -11" radius="0.5" color="#EF2D5E" rotation="" scale="" visible="" material="" geometry=""></a-sphere>
 
 <!--Chair-->
+<!-- https://furniture.3d.io/ -->
 <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:099b3ff0-4070-407b-bf2e-cadbb93eac42" position="53 0 -10" rotation="0 90 0" scale="4 4 4" visible=""></a-entity>
 
 <!-- Ceiling Light -->
- 
+ <!-- https://free3d.com/ -->
   <a-obj-model src="assets/bulb/lightbulbfinal.obj" visible="true" mtl="assets/bulb/lightbulbfinal.mtl" position="10 11 -7" rotation="" scale="0.01 0.01 0.01" material="" obj-model=""></a-obj-model>
   <a-light id="wallLight" type="point" color="#222" position="10 8 -7" intensity="2" rotation="" scale="" visible="" light="">
   </a-light>
