@@ -19,23 +19,33 @@ The demo is available on github io: https://pardeshiamitsingh.github.io/virtualH
 
 <h3> Lamps: </h3> Can turn on and off the lamps by clicking on them.
 
+<hr>
+
 ![alt text](https://github.com/pardeshiamitsingh/virtualHome/blob/master/snapshots/fireplace.jpg)
 
 <h3> Fireplace: </h3> On click of the chimney, can turn on off the fire.
 
 <h3> FootBall: </h3> The position of football changes by clicking on it.
 
+<hr>
+
 ![alt text](https://github.com/pardeshiamitsingh/virtualHome/blob/master/snapshots/radio.jpg)
 
 <h3> Radio: </h3> Can play and pause the audio by clicking on it.
+
+<hr>
 
 ![alt text](https://github.com/pardeshiamitsingh/virtualHome/blob/master/snapshots/globe.jpg)
 
 <h3> Globe: </h3> The Globe auto rotates.
 
+<hr>
+
 ![alt text](https://github.com/pardeshiamitsingh/virtualHome/blob/master/snapshots/mobileShelf.jpg)
 
 <h3> MobileShelf: </h3> The direction of the the mobile shelf can be changed by clicking on it.
+
+<hr>
 
 ![alt text](https://github.com/pardeshiamitsingh/virtualHome/blob/master/snapshots/framery.jpg)
 
