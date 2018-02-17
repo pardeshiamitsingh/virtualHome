@@ -3,9 +3,6 @@
     <script src="libs/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.14.0/dist/aframe-extras.min.js"></script>
     <script src="https://dist.3d.io/3dio-js/1.1.x/3dio.min.js"></script>
-
-    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
-    
 </head>
 <body>
 
@@ -15,7 +12,7 @@
         <video id="piper" autoplay loop="true" src="assets/piper.mp4"></video>
     </a-assets>
     <a-sky src="images/sky.jpg"></a-sky>
-    <a-entity position="70 1 14.5" rotation="0 90 0">
+    <a-entity position="70 1 6" rotation="0 90 0">
         <a-camera universal-controls>
             <a-entity cursor="fuse: true; maxDistance: 20; timeout: 250" position="0 0 -5" geometry="primitive: ring" material="color: white; shader: flat" rotation="" scale="0.1 0.1 0.1" visible="" raycaster="">
         </a-entity>
@@ -74,9 +71,9 @@ roughness: 1; src: url(images/beam1.jpg); repeat: 1 2" scale="" visible=""></a-e
   <a-light id="wallLight" type="point" color="#222" position="60 8 18" intensity="2" rotation="" scale="3 3 3" visible="" light=""> 
     </a-light>
 
-  <!-- Grand piano -->
-  <!-- https://furniture.3d.io/ -->
-  <a-entity shadow="cast:true;receive:true;" io3d-furniture="id:9ce8547d-59ec-4205-91d8-e578f19d9e63" scale="3 3 3" position="25 0 20" rotation="0 90 0" visible=""></a-entity>
+<!-- Grand piano -->
+<!-- https://furniture.3d.io/ -->
+<a-entity shadow="cast:true;receive:true;" io3d-furniture="id:9ce8547d-59ec-4205-91d8-e578f19d9e63" scale="3 3 3" position="25 0 20" rotation="0 90 0" visible=""></a-entity>
  
 <!--mobile shelf-->
 <!-- https://furniture.3d.io/ -->
@@ -95,8 +92,8 @@ roughness: 1; src: url(images/beam1.jpg); repeat: 1 2" scale="" visible=""></a-e
 </a-light>
 <a-entity id="cuberlight" geometry="primitive: box" material="color: blue" position="78 2 19" rotation="" scale="2 7 2" width="10" visible="false"></a-entity>
 
-    <!-- Ceiling -->
-   <a-entity static-body="" geometry="primitive: box; depth: 45; height: 0.09; width: 79" position="40 14 5" material="shader: flat; side: double; opacity: 1; src: url(images/cel1.jpg); repeat: 20 12" rotation="" scale="" visible=""></a-entity>
+  <!-- Ceiling -->
+  <a-entity static-body="" geometry="primitive: box; depth: 45; height: 0.09; width: 79" position="40 14 5" material="shader: flat; side: double; opacity: 1; src: url(images/cel1.jpg); repeat: 20 12" rotation="" scale="" visible=""></a-entity>
 
     <!-- Floor -->
   <a-entity shadow="cast:true;receive:true;"  static-body="" geometry="primitive: box; depth: 40; height: 0.1; width: 80" position="40 -0.5 5" material="shader: flat; side: double; opacity: 1; src: url(images/woodenfloor.jpg); repeat: 12 5" shadow="cast:true;receive:true;" rotation="" scale="" visible=""></a-entity>
@@ -106,6 +103,7 @@ roughness: 1; src: url(images/beam1.jpg); repeat: 1 2" scale="" visible=""></a-e
 roughness: 1; src: url(images/beam1.jpg); repeat: 9 1" scale="" visible=""></a-entity>
    <a-entity static-body="" geometry="primitive: box; depth: 1; height: 14; width: 40" position="-0.5 6.5 5" rotation="0 90 0" material="shader: standard;
 roughness: 1; src: url(images/wall2.jpg); repeat: 4 2" scale="" visible=""></a-entity>
+
 <!--Front wall- -->
  <a-entity shadow="cast:true;receive:true;" geometry="primitive: box; depth: 0.6; height: 1; width: 40" position="79.7 13.5 5" rotation="0 90 0" material="shader: standard;
 roughness: 1; src: url(images/beam1.jpg); repeat: 9 1"></a-entity>
@@ -114,13 +112,14 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 4 2"></a-entity>
 
 <!--Door -->
 <!-- https://free3d.com/ -->
-<a-obj-model src="assets/Door/Door.obj" visible="true" mtl="assets/Door/Door.mtl" position="74 -1 -15" rotation="0 -180 0" scale="1 1 1" material="" obj-model=""></a-obj-model>
+<a-obj-model src="assets/Door/Door.obj" visible="true" mtl="assets/Door/Door.mtl" position="74 -1 -15" rotation="0 -180 0" scale="0.9 0.9 0.1" material="" obj-model=""></a-obj-model>
 
 <!-- Cabinet -->
 <!-- https://furniture.3d.io/ -->
 <a-entity shadow="cast:true;receive:true;"  io3d-furniture="id:a0f898a3-74f0-4cbd-9423-057a64b2d00e" position="77.5 0 6" scale="3 3 3" rotation="0 -90 0" visible=""></a-entity>
 
 <!-- Video -->
+<!-- Television -->
 <a-video src="#piper" width="6" height="4" position="77.5 3 6" rotation="0 -90 0" scale="" visible="" material="" geometry=""></a-video>
 
 <!-- Midwall -->
@@ -208,7 +207,6 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-
   <a-obj-model src="assets/bulb/lightbulbfinal.obj" visible="true" mtl="assets/bulb/lightbulbfinal.mtl" position="10 11 18" rotation="" scale="0.01 0.01 0.01" material="" obj-model=""></a-obj-model>
   <a-light id="wallLight" type="point" color="#222" position="10 8 18" intensity="2" rotation="" scale="3 3 3" visible="" light=""> 
   </a-light>
-
 </a-scene>
 <script src="main.js"></script>
 </body>
