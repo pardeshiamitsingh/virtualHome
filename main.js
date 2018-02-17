@@ -9,14 +9,14 @@ document.querySelector('#cubeshelf').addEventListener('click', function () {
 	var mobileshelf = document.querySelector('#mobileshelf');
 	var cubeshelf = document.querySelector('#cubeshelf');
 
-  	if(mobileshelf.getAttribute('position').x == 25  && 
+  	if(mobileshelf.getAttribute('position').x == 23  && 
   		mobileshelf.getAttribute('position').y == 0 && 
   		mobileshelf.getAttribute('position').z == 15  ) {
-  		mobileshelf.setAttribute('position', '25 0 11');
-  		cubeshelf.setAttribute('position', '25 0 11');
+  		mobileshelf.setAttribute('position', '23 0 11');
+  		cubeshelf.setAttribute('position', '23 0 11');
   	} else {
-  		mobileshelf.setAttribute('position', '25 0 15');
-  		cubeshelf.setAttribute('position', '25 0 15');
+  		mobileshelf.setAttribute('position', '23 0 15');
+  		cubeshelf.setAttribute('position', '23 0 15');
   	}
 });
 
@@ -66,18 +66,17 @@ document.querySelector('#cubefireplace').addEventListener('click', function () {
   		firelight.setAttribute('visible', 'false');
   		firelight.setAttribute('intensity', '0');
   	} else {
-  		var animation = document.createElement("a-animation");
+  		
+  		/*var animation = document.createElement("a-animation");
   		animation.setAttribute("attribute","position");
         animation.setAttribute("to","55 2 -14");
         animation.setAttribute("dur","450");
-        animation.setAttribute("repeat","indefinite");
+        animation.setAttribute("repeat","indefinite");*/
         //    firelight(animation);
   		fire.setAttribute('visible', 'true');
   		firelight.setAttribute('visible', 'true');
   		firelight.setAttribute('intensity', '0.1');
-  		firelight.setAttribute("positionto","55 2 -14");
-        firelight.setAttribute("duration","450");
-        firelight.setAttribute("repeat","indefinite");
+        firelight.emit("startAnimation");
   	}
 });
 	
@@ -90,4 +89,19 @@ document.querySelector('#cuberadio').addEventListener('click', function () {
 	} else {
 		entity.components.sound.playSound();
 	}
+});
+
+//move football
+document.querySelector('#football').addEventListener('click', function () {
+	var football = document.querySelector('#football');
+
+  	if(football.getAttribute('position').x == 60  && 
+  		football.getAttribute('position').y == 0.2 && 
+  		football.getAttribute('position').z == -11  ) {
+  		football.setAttribute('position', '60 0.2 -14');
+  		football.setAttribute('rotation', '45 90 180');
+  	} else {
+  		football.setAttribute('position', '60 0.2 -11');
+  		football.setAttribute('rotation', '45 90 180');
+  	}
 });
