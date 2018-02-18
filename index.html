@@ -77,17 +77,20 @@ roughness: 1; src: url(images/beam1.jpg); repeat: 1 2" scale="" visible=""></a-e
  
 <!--mobile shelf-->
 <!-- https://furniture.3d.io/ -->
-<a-entity id="cubeshelf" geometry="primitive: box" material="color: blue" position="23 0 15" rotation="" scale="2 7 2" visible="false" width="10"></a-entity>
-<a-entity shadow="cast:true;receive:true;" id="mobileshelf" geometry="primitive: box" io3d-furniture="id:82c9add5-781b-4446-b6d9-5999d1d03594" position="25 0 15" rotation="0 90 0" scale="4 4 4" visible=""></a-entity>
+<a-entity id="cubeshelf" geometry="primitive: box" material="color: blue" position="23 0 15" rotation="" scale="2 7 2" visible="false" width="10">
+</a-entity>
+<a-entity  shadow="cast:true;receive:true;" id="mobileshelf" geometry="primitive: box" io3d-furniture="id:82c9add5-781b-4446-b6d9-5999d1d03594" position="25 0 15" rotation="0 90 0" scale="4 4 4" visible=""></a-entity>
 
 <!-- Lamps -->
 <!-- https://furniture.3d.io/ -->
-<a-entity shadow="cast:true;receive:true;" io3d-furniture="id:7fb81a8c-4019-450c-b178-aba4c9d14b71" position="78 0 -8" rotation="0 -90 0" scale="5 5 5" visible=""></a-entity>
+<a-entity id="llamp" shadow="cast:true;receive:true;" io3d-furniture="id:7fb81a8c-4019-450c-b178-aba4c9d14b71" position="78 0 -8" rotation="0 -90 0" scale="5 5 5" visible="">
+</a-entity>
  <a-light id="llight" type="point" color="#222" position="78 2 -8" intensity="0" rotation="" scale="" visible="" light="">
 </a-light>
 <a-entity id="cubellight" geometry="primitive: box" material="color: blue" position="78 2 -8" rotation="" scale="2 7 2" width="10" visible="false"></a-entity>
 
-<a-entity shadow="cast:true;receive:true;" io3d-furniture="id:7fb81a8c-4019-450c-b178-aba4c9d14b71" position="78 0 19" scale="5 5 5" rotation="0 90 0"></a-entity>
+<a-entity id="rlamp" shadow="cast:true;receive:true;" io3d-furniture="id:7fb81a8c-4019-450c-b178-aba4c9d14b71" position="78 0 19" scale="5 5 5" rotation="0 90 0">
+</a-entity>
 <a-light id="rlight" type="point" color="#222" position="78 2 19" intensity="0" rotation="" scale="" visible="" light="">
 </a-light>
 <a-entity id="cuberlight" geometry="primitive: box" material="color: blue" position="78 2 19" rotation="" scale="2 7 2" width="10" visible="false"></a-entity>
@@ -120,7 +123,10 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 4 2"></a-entity>
 
 <!-- Video -->
 <!-- Television -->
-<a-video src="#piper" width="6" height="4" position="77.5 3 6" rotation="0 -90 0" scale="" visible="" material="" geometry=""></a-video>
+<a-video id = "tv" src="#piper" width="6" height="4" position="77.5 3 6" rotation="0 -90 0" scale="" visible="" material="" geometry="">
+  <a-animation attribute="scale" begin="mouseenter" to="1.2 1 1.2" dur="200"></a-animation>
+  <a-animation attribute="scale" begin="mouseleave" to="1 1 1" dur="200"></a-animation>
+</a-video>
 
 <!-- Midwall -->
  <a-entity shadow="cast:true;receive:true;" static-body="" geometry="primitive: box; depth: 2; height: 5; width: 20" position="49 0 15.2" rotation="0 90 0" material="shader: standard;roughness: 1; src: url(images/wall2.jpg); repeat: 4 2" scale="" visible=""></a-entity>
@@ -129,6 +135,7 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 4 2"></a-entity>
 <!-- https://furniture.3d.io/ -->
 <a-entity io3d-furniture="id:8277e021-dcd2-4bbe-8924-72f9f1690d19" scale="2 2 2" position="33 0 22" rotation="0 -180 0" visible=""></a-entity>
 
+<!-- wall image -->
 <a-entity geometry="primitive: box; depth: 0.6; height: 1; width: 80" position="40 13.5 -14.5" rotation="0 0 0" material="shader: standard;
 roughness: 1; src: url(images/beam1.jpg); repeat: 32 1" scale="" visible=""></a-entity>
  <a-entity static-body="" geometry="primitive: box; depth: 1; height: 14; width: 80" position="40 6.5 -15.5" rotation="0 0 0" material="shader: standard;
@@ -139,8 +146,10 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-
  <a-entity io3d-furniture="id:e974c59d-3458-4bbf-b45a-ff5ad6f187ba" scale="2 2 2" position="49 2.5 19"></a-entity>
 
  <!-- Globe -->
- <a-sphere shadow="cast:true;receive:true;" id="globe" src="images/globe.jpg" position="49 3.2 11" radius="0.5" rotation="" scale="" visible="" material="" geometry="">
+ <a-sphere class="hover" id="globe" shadow="cast:true;receive:true;" id="globe" src="images/globe.jpg" position="49 3.2 11" radius="0.5" rotation="" scale="" visible="" material="" geometry="">
    <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+  <a-animation attribute="scale" begin="mouseenter" to="1.2 1.2 1.2" dur="200"></a-animation>
+  <a-animation attribute="scale" begin="mouseleave" to="1 1 1" dur="200"></a-animation>
  </a-sphere>
  <a-cylinder color="crimson" src="images/rod.jpg" height="0.2" radius="0.07" position="49 2.6 11" rotation="0 0 0" scale="" visible="" material="" geometry=""></a-cylinder>
 
@@ -150,7 +159,8 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-
 
 <!-- Radio -->
 <!-- https://free3d.com/ -->
- <a-entity collada-model="url(assets/radio/Radio_BI_dae.dae)" rotation="0 90 0" position="49 2.5 15" visible="" scale="0.1 0.1 0.1"></a-entity>
+ <a-entity id="radio" collada-model="url(assets/radio/Radio_BI_dae.dae)" rotation="0 90 0" position="49 2.5 15" visible="" scale="0.05 0.05 0.05">
+ </a-entity>
 <a-entity id="cuberadio" sound="src: #audio1" geometry="primitive: box" material="color: blue" position="49 2.5 15" rotation="" scale="0.5 1 0.5" visible="false" width="10"></a-entity>
 
 <!--second wall -->
@@ -170,7 +180,10 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-
 
 <!--Framery-->
 <!-- https://furniture.3d.io/ -->
-<a-entity shadow="cast:true;receive:true;" io3d-furniture="id:2e33ffb3-e046-44df-bbf8-26c1aa00287e" scale="4.5 4.5 4.5" rotation="0 90 0" position="3 0 -9" visible=""></a-entity>
+<a-entity id="framery" shadow="cast:true;receive:true;" io3d-furniture="id:2e33ffb3-e046-44df-bbf8-26c1aa00287e" scale="4.5 4.5 4.5" rotation="0 90 0" position="3 0 -9" visible="">
+  <a-animation attribute="opacity" begin="mouseenter" to="2" dur="200"></a-animation>
+  <a-animation attribute="opacity" begin="mouseleave" to="1.9" dur="200"></a-animation>
+</a-entity>
 <a-light id="framerylight" type="point" color="#333" position="3 5 -9" intensity="0" rotation="0 45 0" scale="" visible="" light="">
 </a-light>
 <a-entity id="cubeframerylight" geometry="primitive: box" material="color: blue" position="3 0 -9" rotation="" scale="8.5 19 9" width="10" visible="false"></a-entity>
@@ -183,16 +196,35 @@ roughness: 1; src: url(images/wall2.jpg); repeat: 12 2" scale="" visible=""></a-
 
 <!--Fireplace -->
 <!-- https://furniture.3d.io/ -->
-<a-entity shadow="cast:true;receive:true;" io3d-furniture="id:f103bb18-96ba-4734-8905-87cd43bfb3ce" position="55 0 -15" rotation="" scale="5 5 5" visible=""></a-entity>
+<a-entity id="fireplace" shadow="cast:true;receive:true;" io3d-furniture="id:f103bb18-96ba-4734-8905-87cd43bfb3ce" position="55 0 -15" rotation="" scale="5 5 5" visible="">
+</a-entity>
 <a-entity id="cubefireplace" geometry="primitive: box" material="color: blue" position="55 0 -15" rotation="" scale="2 7 2" visible="false" width="10"></a-entity>
 <a-entity id="fire" geometry="primitive: plane; height: 1; width: 1" position="55 2 -14" rotation="0 0 0" material="shader: flat; side: double; transparent: true; src: url(images/fire.png)" scale="" visible="false">
-<a-animation attribute="position" to="55 2 -14" easing="linear" repeat="indefinite" begin="startAnimation" dur="450"></a-animation>
+<a-animation attribute="position" 
+                 from="55 0 -15"
+                 to="55 2 -15"
+                 dur="200"
+                 begin="fire-start"
+                 end="fire-stop"
+                 repeat="indefinite"></a-animation>
 </a-entity>
 <a-light id="firelight" type="point" color="red" position="55 2 -14" intensity="0" rotation="" scale="" visible="false" light="">
 </a-light>
 
  <!-- Football -->
- <a-sphere shadow="cast:true;receive:true;" id="football" src="images/football.jpg" position="60 0.2 -11" radius="0.5" color="#EF2D5E" rotation="" scale="" visible="" material="" geometry=""></a-sphere>
+ <a-sphere shadow="cast:true;receive:true;" id="football" src="images/football.jpg" position="60 0.2 -11" radius="0.5" color="#EF2D5E" rotation="" scale="" visible="" material="" geometry="">
+   <a-animation attribute="position" 
+                 from="60 3 -11"
+                 to="60 0.2 -11"
+                 dur="400"
+                 begin="bounce-start"
+                 end="bounce-stop"
+                 fill="backwards"
+                 easing="ease-in"
+                 repeat="2"></a-animation>
+  <a-animation attribute="scale" begin="mouseenter" to="1.2  1.2 1.2" dur="200"></a-animation>
+  <a-animation attribute="scale" begin="mouseleave" to="1 1 1" dur="200"></a-animation>
+ </a-sphere>
 
 <!--Chair-->
 <!-- https://furniture.3d.io/ -->

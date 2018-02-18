@@ -3,10 +3,26 @@ var sceneEl = document.querySelector('a-scene');
 
 var camera = document.querySelector('a-camera');
 var entity = sceneEl.querySelector('a-entity');
-  var wallLight ;
+var wallLight ;
+var radio = document.querySelector('#radio');
+var fireplace = document.querySelector('#fireplace');
+var mobileshelf = document.querySelector('#mobileshelf');
+var llamp = document.querySelector('#llamp');
+var rlamp = document.querySelector('#rlamp');
+var framery = document.querySelector('#framery');
 
+//scaleup when mouse is on moblie shelf
+document.querySelector('#cubeshelf').addEventListener('mouseenter', function () {
+	mobileshelf.setAttribute('scale', '4.4 4.4 4.4');	
+});
+
+//scaledown when mouse is out off moblie shelf
+document.querySelector('#cubeshelf').addEventListener('mouseleave', function () {
+	mobileshelf.setAttribute('scale', '4 4 4');	
+});
+
+//change position of shelf when clicked on it
 document.querySelector('#cubeshelf').addEventListener('click', function () {
-	var mobileshelf = document.querySelector('#mobileshelf');
 	var cubeshelf = document.querySelector('#cubeshelf');
 
   	if(mobileshelf.getAttribute('position').x == 23  && 
@@ -18,6 +34,16 @@ document.querySelector('#cubeshelf').addEventListener('click', function () {
   		mobileshelf.setAttribute('position', '23 0 15');
   		cubeshelf.setAttribute('position', '23 0 15');
   	}
+});
+
+//scaleup when mouse is on left lamp
+document.querySelector('#cubellight').addEventListener('mouseenter', function () {
+	llamp.setAttribute('scale', '5.4 5.4 5.4');	
+});
+
+//scaledown when mouse is out off left lamp
+document.querySelector('#cubellight').addEventListener('mouseleave', function () {
+	llamp.setAttribute('scale', '5 5 5');	
 });
 
 //left light turn on off
@@ -32,6 +58,16 @@ document.querySelector('#cubellight').addEventListener('click', function () {
   	}
 });
 
+//scaleup when mouse is on right lamp
+document.querySelector('#cuberlight').addEventListener('mouseenter', function () {
+	rlamp.setAttribute('scale', '5.4 5.4 5.4');	
+});
+
+//scaledown when mouse is out off right lamp
+document.querySelector('#cuberlight').addEventListener('mouseleave', function () {
+	rlamp.setAttribute('scale', '5 5 5');	
+});
+
 //right light turn on off
 document.querySelector('#cuberlight').addEventListener('click', function () {
 	var rlight = document.querySelector('#rlight');
@@ -42,6 +78,16 @@ document.querySelector('#cuberlight').addEventListener('click', function () {
   		rlight.setAttribute('intensity', '0');
   		
   	}
+});
+
+//scaleup when mouse is on framery
+document.querySelector('#cubeframerylight').addEventListener('mouseenter', function () {
+	framery.setAttribute('scale', '4.9 4.9 4.9');	
+});
+
+//scaledown when mouse is out off framery
+document.querySelector('#cubeframerylight').addEventListener('mouseleave', function () {
+	framery.setAttribute('scale', '4.5 4.5 4.5');	
 });
 
 //framery light turn on off
@@ -56,30 +102,46 @@ document.querySelector('#cubeframerylight').addEventListener('click', function (
   	}
 });
 
+//scaleup when mouse is on fireplace
+document.querySelector('#cubefireplace').addEventListener('mouseenter', function () {
+	fireplace.setAttribute('scale', '5.4 5.4 5.4');	
+});
+
+//scaledown when mouse is out off fireplace
+document.querySelector('#cubefireplace').addEventListener('mouseleave', function () {
+	fireplace.setAttribute('scale', '5 5 5');	
+});
+
 //Turn on off fire
 document.querySelector('#cubefireplace').addEventListener('click', function () {
 	var fire = document.querySelector('#fire');
 	var firelight = document.querySelector('#firelight');
+	var firebool = true;
 
   	if(fire.getAttribute('visible') == true ) {
+  		firebool = false;
   		fire.setAttribute('visible', 'false');
   		firelight.setAttribute('visible', 'false');
   		firelight.setAttribute('intensity', '0');
   	} else {
-  		
-  		/*var animation = document.createElement("a-animation");
-  		animation.setAttribute("attribute","position");
-        animation.setAttribute("to","55 2 -14");
-        animation.setAttribute("dur","450");
-        animation.setAttribute("repeat","indefinite");*/
-        //    firelight(animation);
+  		firebool = true;
   		fire.setAttribute('visible', 'true');
   		firelight.setAttribute('visible', 'true');
   		firelight.setAttribute('intensity', '0.1');
-        firelight.emit("startAnimation");
+        firelight.emit(firebool ? 'fire-start' : 'fire-stop');
   	}
 });
-	
+
+//scaleup when mouse is on radio
+document.querySelector('#cuberadio').addEventListener('mouseenter', function () {
+	radio.setAttribute('scale', '0.1 0.1 0.1');	
+});
+
+//scaledown when mouse is out off radio
+document.querySelector('#cuberadio').addEventListener('mouseleave', function () {
+	radio.setAttribute('scale', '0.05 0.05 0.05');	
+});
+
 //turn on off music of radio
 document.querySelector('#cuberadio').addEventListener('click', function () {
 	var entity = document.querySelector('[sound]');
@@ -91,17 +153,11 @@ document.querySelector('#cuberadio').addEventListener('click', function () {
 	}
 });
 
-//move football
+var bouncing = false;
+
+//bounce football
 document.querySelector('#football').addEventListener('click', function () {
 	var football = document.querySelector('#football');
-
-  	if(football.getAttribute('position').x == 60  && 
-  		football.getAttribute('position').y == 0.2 && 
-  		football.getAttribute('position').z == -11  ) {
-  		football.setAttribute('position', '60 0.2 -14');
-  		football.setAttribute('rotation', '45 90 180');
-  	} else {
-  		football.setAttribute('position', '60 0.2 -11');
-  		football.setAttribute('rotation', '45 90 180');
-  	}
+	football.emit(bouncing ? 'bounce-start' : 'bounce-stop');
+	bouncing = !bouncing;
 });
