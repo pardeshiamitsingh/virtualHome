@@ -11,6 +11,8 @@ This project focuses on creating a human scale scene experienced from the 'insid
 The final version is uploaded as virtualHome.zip. Put the content of the root folder on your root directory and open it in a webbrowser.
 The demo is available on github io: https://pardeshiamitsingh.github.io/virtualHome/
 
+Animated objects scale up on hover and scale down to their original state when the cursor is not on the animated objects.
+
 <h1> Snapshots of animated objects </h1>
 
 ![alt text](https://github.com/pardeshiamitsingh/virtualHome/blob/master/snapshots/2lamps.jpg)
@@ -23,9 +25,9 @@ The demo is available on github io: https://pardeshiamitsingh.github.io/virtualH
 
 ![alt text](https://github.com/pardeshiamitsingh/virtualHome/blob/master/snapshots/fireplace.jpg)
 
-<h3> Fireplace: </h3> On click of the chimney, can turn on off the fire.
+<h3> Fireplace: </h3> On click of the chimney, can turn on and off the fire.
 
-<h3> FootBall: </h3> The position of football changes by clicking on it.
+<h3> FootBall: </h3> The football bounces by clicking on it.
 
 <hr>
 
